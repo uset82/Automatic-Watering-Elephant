@@ -1,0 +1,21 @@
+{
+  "name": "fan_plotter",
+  "version": "1.0.0",
+  "description": "Real-time serial plotter for STM32 Mini Fan Project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["stm32", "serial", "plotter", "arduino"],
+  "author": "ELE201",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^7.1.11"
+  },
+  "dependencies": {
+    "smoothie": "^1.36.1"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elephant Watering System - Serial Plotter</title>
+</head>
+
+<body>
+  <canvas id="star-bg"></canvas>
+  <div id="app" class="glassy">
+    <div class="badge-glass">Made by <span class="ios26">Carlos Carpio</span> <span class="geek">🤓</span></div>
+    <h1 class="glassy-title">Elephant Watering System <span class="comet">☄️</span></h1>
+    <p class="glassy-sub">Arduino Uno | DHT11 D2 | Soil Moisture A0 | Relay D8 | Mini Pump <span
+        class="electronics">🔌⚡</span></p>
+
+    <div class="glassy-btns">
+      <button id="connectArduino" class="glassy-btn arduino-btn">🔧 Arduino (Motor/Pump)</button>
+      <button id="connectRP2350" class="glassy-btn rp2350-btn">🌡️ RP2350 (Sensors)</button>
+      <button id="disconnectAll" class="glassy-btn disconnect-btn">❌ Disconnect All</button>
+    </div>
+
+    <div id="status" class="glassy-status">
+      <span>Arduino: <span id="arduinoStatus" class="status-disconnected">Disconnected</span></span>
+      <span style="margin-left: 20px;">RP2350: <span id="rp2350Status"
+          class="status-disconnected">Disconnected</span></span>
+    </div>
+
+    <div class="charts">
+      <div class="chart-container glassy-card">
+        <h2>Temperature (&deg;C)</h2>
+        <canvas id="chartTemp" width="400" height="150"></canvas>
+        <p id="currentTemp">Temperature: -- &deg;C</p>
+      </div>
+
+      <div class="chart-container glassy-card">
+        <h2>Humidity (%)</h2>
+        <canvas id="chartHumidity" width="400" height="150"></canvas>
+        <p id="currentHumidity">Humidity: -- %</p>
+      </div>
+
+      <div class="chart-container glassy-card">
+        <h2>Soil Moisture (ADC Value)</h2>
+        <canvas id="chartPot" width="400" height="150"></canvas>
+        <p id="currentPot">Soil Moisture (ADC): -- ADC</p>
+      </div>
+
+      <div class="chart-container glassy-card">
+        <h2>Servo Angle (&deg;)</h2>
+        <canvas id="chartServo" width="400" height="150"></canvas>
+        <p id="currentServo">Servo Angle: -- &deg;</p>
+      </div>
+
+      <div class="chart-container glassy-card">
+        <h2>Motor / Pump PWM</h2>
+        <canvas id="chartMotor" width="400" height="150"></canvas>
+        <p id="currentMotor">Motor / Pump PWM: -- PWM</p>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+  <script src="/src/starbg.js"></script>
+</body>
+
+</html>

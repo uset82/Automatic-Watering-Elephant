@@ -1,0 +1,322 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f0816; /* deeper near-black purple */
+  min-height: 100vh;
+  color: #e9e6f7;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#star-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: saturate(1.1) blur(0.2px);
+}
+
+#app.glassy {
+  width: min(1400px, 95vw);
+  margin: 48px auto;
+  background: linear-gradient(180deg, rgba(32,18,44,0.7), rgba(18,10,30,0.55));
+  border-radius: 18px;
+  padding: 28px 26px 30px 26px;
+  box-shadow: 0 10px 40px rgba(95,30,110,0.25);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  backdrop-filter: blur(12px) saturate(1.1);
+  border: 1px solid rgba(140,100,190,0.12);
+  z-index: 1;
+}
+
+.badge-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 4px 14px rgba(80,30,100,0.12);
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #efe8ff;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(140,100,190,0.10);
+  -webkit-backdrop-filter: blur(6px) saturate(1.05);
+  backdrop-filter: blur(6px) saturate(1.05);
+}
+.ios26 {
+  background: linear-gradient(135deg, #9556d4 0%, #6f46c9 100%);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.98em;
+  box-shadow: 0 2px 10px rgba(120,80,200,0.12);
+}
+
+.geek {
+  font-size: 1.05em;
+  margin-left: 4px;
+}
+
+.glassy-title {
+  color: #e6dbff;
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.comet {
+  font-size: 1.1em;
+  margin-left: 8px;
+  filter: drop-shadow(0 0 8px #b48cff);
+}
+.glassy-sub {
+  text-align: center;
+  color: #d9cffb;
+  margin-bottom: 22px;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+.electronics {
+  font-size: 1.2em;
+  margin-left: 6px;
+  filter: drop-shadow(0 0 6px #764ba2);
+}
+
+.glassy-btns {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.glassy-btn {
+  padding: 12px 26px;
+  font-size: 0.98rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  font-weight: 700;
+  margin: 8px 12px;
+  background: linear-gradient(135deg, #8f5fd3 0%, #6f46c9 100%);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(80,30,100,0.12);
+  border: 1px solid rgba(140,100,190,0.10);
+  -webkit-backdrop-filter: blur(4px) saturate(1.05);
+  backdrop-filter: blur(4px) saturate(1.05);
+}
+.glassy-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.glassy-btn:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 5px 20px rgba(120,80,200,0.18);
+}
+
+.glassy-status {
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  margin: 18px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #efe8ff;
+  border: 1px solid rgba(140,100,190,0.08);
+  box-shadow: 0 6px 18px rgba(80,30,100,0.08);
+  -webkit-backdrop-filter: blur(6px) saturate(1.05);
+  backdrop-filter: blur(6px) saturate(1.05);
+}
+#statusText {
+  color: #e74c3c;
+}
+#statusText.connected {
+  color: #27ae60;
+}
+
+.charts {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.chart-container.glassy-card {
+  margin-bottom: 0;
+  padding: 15px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 6px 16px rgba(40,10,60,0.18);
+  border: 1px solid rgba(120,80,200,0.06);
+  -webkit-backdrop-filter: blur(4px) saturate(1.02);
+  backdrop-filter: blur(4px) saturate(1.02);
+}
+.chart-container h2 {
+  color: #b48cff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.chart-container p {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 10px;
+  color: rgba(230,225,255,0.85);
+  font-weight: 600;
+}
+
+/* Make all measurement values highly visible */
+#currentTemp, #currentHumidity, #currentPot, #currentServo, #currentMotor {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  margin-top: 12px !important;
+  opacity: 1.0 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Small helper: lighten h2 on darker screens */
+.chart-container h2 { color: #98a0ff; }
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  background: #0f0b14;
+  box-shadow: 0 6px 16px rgba(40,10,60,0.12);
+}
+
+/* Responsive tweaks */
+@media (max-width: 1200px) {
+  .charts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  #app.glassy { width: 94vw; padding: 20px; }
+  .glassy-title { font-size: 1.4rem; }
+  .chart-container.glassy-card { padding: 12px; }
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+h1 {
+  color: #667eea;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin: 10px;
+}
+
+#connect {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+#connect:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+#disconnect {
+  background: #e74c3c;
+  color: white;
+}
+
+#disconnect:hover:not(:disabled) {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#status {
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#statusText {
+  color: #e74c3c;
+}
+
+#statusText.connected {
+  color: #27ae60;
+}
+
+.charts {
+  margin-top: 30px;
+}
+
+.chart-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f8f9fa;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.chart-container h2 {
+  color: #667eea;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.chart-container p {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background: white;
+}
